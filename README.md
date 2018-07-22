@@ -1,0 +1,1 @@
+# PHP MVC With Auto Versioning of Image, JS and CSS Files
