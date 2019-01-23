@@ -1,0 +1,16 @@
+<?php
+use Lib\App;
+
+$route = App::getRouter()->getRoute();
+$ctrl = App::getRouter()->getController();
+$action = App::getRouter()->getAction();
+
+if(!empty(__js($route))) { ?> <script src="<?= __js($route) ?>" type="text/javascript"></script><?php }
+
+if(!empty(__js($route.'.'.$ctrl))) { ?> <script src="<?= __js($route.'.'.$ctrl) ?>" type="text/javascript"></script><?php }
+
+if(!empty(__js($route.'.'.$action))) { ?> <script src="<?= __js($route.'.'.$action) ?>" type="text/javascript"></script><?php }
+
+if(!empty( __js($route.'.'.$ctrl.'.'.$action) )) { ?> <script src="<?= __js($route.'.'.$ctrl.'.'.$action) ?>" type="text/javascript"></script><?php }
+
+?>

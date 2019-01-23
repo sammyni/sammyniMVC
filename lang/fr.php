@@ -1,0 +1,6 @@
+<?php
+return [
+    'lng.title' => ''
+];
+
+?>

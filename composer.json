@@ -1,0 +1,10 @@
+{
+    "autoload" : {
+        "psr-4" : {
+            "Lib\\" : "libs/",
+            "Model\\" : "mods/",
+            "Controller\\" : "ctrls/",
+            "Dotenv\\" : "sdk/phpdotenv"
+        }
+    }
+}

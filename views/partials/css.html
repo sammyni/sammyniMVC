@@ -1,0 +1,16 @@
+<?php
+use Lib\App;
+
+$route = App::getRouter()->getRoute();
+$ctrl = App::getRouter()->getController();
+$action = App::getRouter()->getAction();
+
+if(!empty(__css($route))) { ?> <link rel="stylesheet" href="<?= __css($route) ?>" type="text/css" /><?php }
+
+if(!empty(__css($route.'.'.$ctrl))) { ?> <link rel="stylesheet" href="<?= __css(route.'.'.$ctrl) ?>" type="text/css" /><?php }
+
+if(!empty(__css($route.'.'.$action))) { ?> <link rel="stylesheet" href="<?= __css($route.'.'.$action) ?>" type="text/css" /><?php }
+
+if(!empty( __css($route.'.'.$ctrl.'.'.$action) )) { ?> <link rel="stylesheet" href="<?= __css($route.'.'.$ctrl.'.'.$action) ?>" type="text/css" /><?php }
+
+?>

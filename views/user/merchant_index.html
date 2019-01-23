@@ -1,0 +1,84 @@
+<?php
+use Lib\Config;
+?>
+
+
+<?= __inc('merchant.start.header'); ?>
+
+<?php if(__gss('login_merchant')){ ?>
+<h1>Merchant Account Manager</h1>
+
+<?php }else{ ?>
+<!-- Page Title-->
+<div class="page-title">
+    <div class="container">
+        <div class="column"> <h1>Merchant Account</h1> </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="<?= __href('home') ?>">Home</a> </li>
+                <li class="separator">&nbsp;</li>
+                <li>Merchant Account </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content-->
+<div class="container padding-bottom-3x mb-2">
+    <?php if(__gss('m-account-email-init')){ ?>
+    <div class="text-center">
+        <p> <img src="<?= __img('11.png', 'ut') ?>" alt=""> </p>
+        <h3>Almost there...</h3>
+        <p>Please check your email to confirm your account and complete merchant registration</p>
+        <p>
+            No confirmation email received? Please check your spam folder or
+        </p>
+        <p>
+            <a href="#">Resend Verification Link</a>
+        </p>
+        <p>
+            <button type="button" name="" class="btn btn-sm btn-primary">Change Email</button>
+        </p>
+    </div>
+    <?php }else{ ?>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="padding-top-3x hidden-md-up"></div>
+            <h3 class="margin-bottom-1x text-center">Create Merchant Account</h3>
+            <p class="text-center">Register in just minutes and start selling at absolutely no cost.</p>
+            <form class="login-box" method="post">
+                <div class="row margin-bottom-1x">
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block facebook-btn" href="#"><i class="socicon-facebook"></i>&nbsp;Facebook Signup</a></div>
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block twitter-btn" href="#"><i class="socicon-twitter"></i>&nbsp;Twitter Signup</a></div>
+                    <div class="col-xl-4 col-md-6 col-sm-4"><a class="btn btn-sm btn-block google-btn" href="#"><i class="socicon-googleplus"></i>&nbsp;Google+ Signup</a></div>
+                </div>
+
+                <h4 class="mb-3 mt-3"> <hr class="hr-text" data-content="OR" /> </h4>
+
+                <div class="form-group input-group">
+                    <input class="form-control" type="email" placeholder="Email" required><span class="input-group-addon"><i class="icon-mail"></i></span>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-between padding-bottom-1x">
+                    <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="terms" required>
+                    <label class="custom-control-label" for="terms">I have read and accept the terms of service</label>
+                </div>
+                <a class="navi-link" href="<?= __href('merchant_login') ?>">Already Registered?</a>
+                </div>
+                <div class="text-center text-sm-right">
+                    <button class="btn btn-primary btn-block margin-bottom-none" type="submit">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <?php } ?>
+</div>
+
+<?php } ?>
+
+<?= __inc('merchant.start.footer'); ?>
